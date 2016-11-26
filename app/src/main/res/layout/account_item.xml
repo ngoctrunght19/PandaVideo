@@ -16,18 +16,18 @@
         android:layout_height="24dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="25dp"
-        android:id="@+id/iconPerson"
+        android:id="@+id/iconAccount"
         android:tint="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/mPersonItem"
+        android:id="@+id/mAccountItem"
         android:textSize="16sp"
         android:textColor="#000000"
-        android:layout_toRightOf="@+id/iconPerson"
+        android:layout_toRightOf="@+id/iconAccount"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/iconPerson" />
+        android:layout_alignBottom="@+id/iconAccount" />
 
 
 </RelativeLayout>

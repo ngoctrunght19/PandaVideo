@@ -1,7 +1,5 @@
 package com.example.lenovo.pandavideo;
 
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,23 +17,23 @@ import java.util.List;
  * Created by trung on 11/24/2016.
  */
 
-public class TabPerson extends Fragment {
+public class TabAccount extends Fragment {
 
     private List<AdapterData> movieList = new ArrayList<>();
-    private RecyclerView recyclerView;
+    private RecyclerView mRecyclerView;
     private ItemRecylerViewAdapter mAdapter;
     private boolean created = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_person, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewPerson);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewAccount);
 
         mAdapter = new ItemRecylerViewAdapter(movieList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(mAdapter);
 
         if(!created) prepareMovieData();
         return view;

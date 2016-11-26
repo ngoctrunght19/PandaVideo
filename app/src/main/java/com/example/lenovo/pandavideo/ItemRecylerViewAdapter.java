@@ -23,8 +23,8 @@ public class ItemRecylerViewAdapter extends RecyclerView.Adapter<ItemRecylerView
 
         public ViewHolder(View view) {
             super(view);
-            mImageView = (ImageView) view.findViewById(R.id.iconPerson);
-            mTitle = (TextView) view.findViewById(R.id.mPersonItem);
+            mImageView = (ImageView) view.findViewById(R.id.iconAccount);
+            mTitle = (TextView) view.findViewById(R.id.mAccountItem);
         }
 
     }
@@ -36,9 +36,9 @@ public class ItemRecylerViewAdapter extends RecyclerView.Adapter<ItemRecylerView
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.person_item, parent, false);
+        View itemView = inflater.inflate(R.layout.account_item, parent, false);
         /*View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.person_item, parent, false);*/
+                .inflate(R.layout.account_item, parent, false);*/
 
         return new ViewHolder(itemView);
     }
