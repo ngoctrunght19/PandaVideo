@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#ff1b1b</color>
+    <!--<color name="colorAccent">#ff1b1b</color>-->
+    <color name="colorAccent">#ff6b1b</color>
 
 
    <!-- <color name="colorPrimary">#125688</color>-->
@@ -10,7 +11,8 @@
     <color name="textColorPrimary">#ffffff</color>
     <color name="windowBackground">#ffffff</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorSelect">#ff3838</color>
+    <color name="colorSelect">@color/colorAccent</color>
     <color name="colorUnselect">#555555</color>
+    <color name="colorSearchHint">#ddffffff</color>
     <!--<color name="colorAccent">#c8e8ff</color>-->
 </resources>

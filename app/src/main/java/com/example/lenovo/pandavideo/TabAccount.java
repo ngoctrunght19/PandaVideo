@@ -39,6 +39,10 @@ public class TabAccount extends Fragment {
         return view;
     }
 
+    public CharSequence getContentDescription() {
+        return "tai khoan cua toi";
+    }
+
     private void prepareMovieData() {
         created = true;
 

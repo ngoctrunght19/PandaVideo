@@ -15,10 +15,20 @@ import java.util.zip.Inflater;
 
 public class Tab1 extends Fragment {
 
+    String mTitle = "hello";
+
     public Tab1() {}
+
+    public void setTitle(String title) {
+        mTitle = title;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.tab1, container, false);
+    }
+
+    public CharSequence getContentDescription() {
+        return mTitle;
     }
 }

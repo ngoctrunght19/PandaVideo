@@ -1,7 +1,9 @@
 package com.example.lenovo.pandavideo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FloatingActionButton searchFlab;
 
     // chỗ này thay dổi icon cho từng tab
     // hiên tại để cả bốn tab giống nhau
@@ -39,12 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-
         setupViewPager(viewPager);
 
         tabLayout.setupWithViewPager(viewPager);
 
         setTabIcons();
+
+        searchFlab = (FloatingActionButton) findViewById(R.id.fab);
+        searchFlab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -75,15 +88,21 @@ public class MainActivity extends AppCompatActivity {
         final int colorUnselect = getResources().getColor(R.color.colorUnselect);
 
         tabLayout.getTabAt(0).getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(0).setContentDescription("Panda Video");
         tabLayout.getTabAt(1).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(1).setContentDescription("Test 2");
         tabLayout.getTabAt(2).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(1).setContentDescription("Test 3");
         tabLayout.getTabAt(3).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(3).setContentDescription(R.string.my_account);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 tab.getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
-
+                CharSequence tabTitle = tab.getContentDescription();
+                getSupportActionBar().setTitle(tabTitle);
+                Toast.makeText(getApplicationContext(), tabTitle, Toast.LENGTH_SHORT).show();
             }
 
             @Override
