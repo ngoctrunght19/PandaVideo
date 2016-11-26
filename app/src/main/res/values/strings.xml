@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PandaVideo</string>
+    <string name="menu_settings">Cài đặt</string>
+    <string name="menu_privacy_policy">Chính sách bảo mật</string>
+    <string name="menu_feedback">Trợ giúp và phản hồi</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
