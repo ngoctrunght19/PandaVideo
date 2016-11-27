@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.actions, popup.getMenu());
 
-        MenuPopupHelper menuHelper = new MenuPopupHelper(getApplicationContext(), (MenuBuilder) popup.getMenu(), v);
+        MenuPopupHelper menuHelper = new MenuPopupHelper(v.getContext(), (MenuBuilder) popup.getMenu(), v);
         menuHelper.setForceShowIcon(true);
         popup.show();
     }
