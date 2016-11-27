@@ -1,40 +1,51 @@
 package com.example.lenovo.pandavideo;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;
     private ListView listview;
+    private SearchResultFragment searchResult;
     // tạo string array Name cho listview
     String[] NAME = {"Nam","Hoa","Huong","Lan","Minh","Duong"};
     ArrayAdapter<String> adapter;
+
+    public SearchActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         setContentView(R.layout.activity_search);
+
+        searchResult = (SearchResultFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.search_result_fragment);
+        searchResult.done();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,9 +53,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, NAME);
-        listview = (ListView) findViewById(R.id.lvData);
+        listview = (ListView) findViewById(R.id.old_search_datas);
         listview.setAdapter(adapter);
-
 
     }
 
@@ -84,6 +94,11 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         Toast.makeText(getApplication(), "query: " + query, Toast.LENGTH_SHORT).show();
         searchView.clearFocus();
         listview.setVisibility(View.GONE);
+        searchResult.show();
+        searchResult.start();
+
+        h.sendMessageDelayed(new Message(), 1000);
+
         return true;
     }
 
@@ -92,6 +107,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         if (TextUtils.isEmpty(newText)){
             adapter.getFilter().filter("");
             listview.clearTextFilter();
+            listview.setVisibility(View.VISIBLE);
+            searchResult.hide();
         }else {
             adapter.getFilter().filter(newText.toString());
         }
@@ -108,4 +125,22 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.actions, popup.getMenu());
+
+        MenuPopupHelper menuHelper = new MenuPopupHelper(v.getContext(), (MenuBuilder) popup.getMenu(), v);
+        menuHelper.setForceShowIcon(true);
+        popup.show();
+    }
+
+    final Handler h = new Handler() {
+        @Override
+        public void handleMessage(Message message) {
+            searchResult.done();
+            searchResult.loadData();
+        }
+    };
 }

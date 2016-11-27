@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,7 +9,8 @@
     android:paddingBottom="10dp"
     android:paddingTop="10dp"
     android:clickable="true"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".SearchActivity">
 
     <ImageView
         android:layout_width="130dp"
@@ -24,53 +26,56 @@
             android:orientation="vertical"
             android:paddingLeft="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/title_author"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-                <LinearLayout
-                    android:id="@+id/title_author"
-                    android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.8">
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="tom and jerry"
-                        android:textColor="@color/colorUnselect"
-                        android:ellipsize="end"
-                        android:maxLines="2"/>
-                    <TextView
-                        android:id="@+id/author"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="cartoon"
-                        android:textColor="@color/colorUnselect"
-                        android:ellipsize="end"
-                        android:maxLines="2" />
-
-                </LinearLayout>
-                <ImageView
-                    android:id="@+id/popupMenu"
-                    android:layout_width="wrap_content"
+                    android:text="tom and jerry"
+                    android:textColor="@android:color/black"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.2"
-                    android:layout_gravity="center"
-                    android:src="@drawable/dots_vertical"
-                    android:onClick="showPopup"/>
+                    android:text="cartoon"
+                    android:textColor="@android:color/black"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="14sp"/>
 
             </LinearLayout>
-            <TextView
-                android:id="@+id/info"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/popupMenu"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hello"
-                android:ellipsize="end"
-                android:maxLines="1" />
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:src="@drawable/dots_vertical"
+                android:onClick="showPopup"
+                android:textSize="14sp"/>
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+    </LinearLayout>
 
 </LinearLayout>
