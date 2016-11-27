@@ -28,7 +28,4 @@ public class Tab1 extends Fragment {
         return inflater.inflate(R.layout.item_layout, container, false);
     }
 
-    public CharSequence getContentDescription() {
-        return mTitle;
-    }
 }
