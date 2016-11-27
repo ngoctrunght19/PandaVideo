@@ -19,14 +19,14 @@ import java.util.List;
 
 public class TabAccount extends Fragment {
 
-    private List<AdapterData> movieList = new ArrayList<>();
+    private List<AccountData> movieList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private ItemRecyclerViewAdapter mAdapter;
     private boolean created = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_recyclerview, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_account, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewAccount);
 
         mAdapter = new ItemRecyclerViewAdapter(movieList);
@@ -43,19 +43,19 @@ public class TabAccount extends Fragment {
     private void prepareMovieData() {
         created = true;
 
-        AdapterData movie = new AdapterData(R.drawable.ic_backup_black_24px, "Tải lên");
+        AccountData movie = new AccountData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
+        movie = new AccountData(R.drawable.ic_backup_black_24px, "Tải lên");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_file_download_black_24px, "Tải về");
+        movie = new AccountData(R.drawable.ic_file_download_black_24px, "Tải về");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_notifications_black_24px, "Thông báo");
+        movie = new AccountData(R.drawable.ic_notifications_black_24px, "Thông báo");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_history_black_24px, "Lịch sử");
+        movie = new AccountData(R.drawable.ic_history_black_24px, "Lịch sử");
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();

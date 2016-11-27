@@ -33,7 +33,7 @@ public class TabHome extends Fragment {
         ProgressBar spinner = new android.widget.ProgressBar(getContext(), null, android.R.attr.progressBarStyle);
         spinner.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
 
-        View view = inflater.inflate(R.layout.fragment_card_view_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewHome);
         handler = new Handler();
         if (created != true)prepareMovieData();

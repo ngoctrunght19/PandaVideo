@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>{
 
-    private List<AdapterData> dataList;
+    private List<AccountData> dataList;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
@@ -29,7 +29,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
     }
 
-    public ItemRecyclerViewAdapter(List<AdapterData> dataList) {
+    public ItemRecyclerViewAdapter(List<AccountData> dataList) {
         this.dataList = dataList;
     }
 
@@ -45,7 +45,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        AdapterData movie = dataList.get(position);
+        AccountData movie = dataList.get(position);
         holder.mTitle.setText(movie.getTitle());
         holder.mImageView.setImageResource(movie.getImageView());
     }
