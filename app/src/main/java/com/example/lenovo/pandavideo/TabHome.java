@@ -41,13 +41,13 @@ public class TabHome extends Fragment {
         HomeData data = new HomeData(R.drawable.faded, "Alan Walker - Faded", "Alan Walker");
         listData.add(data);
 
-        data = new HomeData(R.drawable.faded, "Alan Walker - Faded", "Alan Walker");
+        data = new HomeData(R.drawable.lck, "LCK Spring - Week 10 Day 1", "LoL Esports");
         listData.add(data);
 
-        data = new HomeData(R.drawable.faded, "Alan Walker - Faded", "Alan Walker");
+        data = new HomeData(R.drawable.sktvsrox, "SK Telecom T1 vs Rox Tigers | Game 1 ...", "LoL Esports");
         listData.add(data);
 
-        data = new HomeData(R.drawable.faded, "Alan Walker - Faded", "Alan Walker");
+        data = new HomeData(R.drawable.minhlagicuanhau, "Mình là gì của nhau | Lou Hoàng | Official MV", "Year Music");
         listData.add(data);
     }
 }

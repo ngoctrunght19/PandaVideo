@@ -45,7 +45,7 @@ public class HomeRecylerViewAdapter extends RecyclerView.Adapter<HomeRecylerView
         HomeData homeData = listData.get(position);
         holder.imageVideo.setImageResource(homeData.getImageVideo());
         holder.textTitle.setText(homeData.getTextTitle());
-        holder.textChannel.setText(homeData.getTextChannel());
+        holder.textChannel.setText("By " + homeData.getTextChannel());
 
     }
 
