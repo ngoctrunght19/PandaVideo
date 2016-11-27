@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        adapter.addFragment(new ItemRecyclerViewFragment());
+        adapter.addFragment(new TabHome());
         adapter.addFragment(new ItemRecyclerViewFragment());
         adapter.addFragment(new Tab1());
         adapter.addFragment(new TabAccount());
