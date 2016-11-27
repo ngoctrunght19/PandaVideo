@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+    </style>
+
+    <style name="SearchTheme" parent="SearchTheme.Base">
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+    </style>
+
+    <style name="SearchTheme.Base" parent="android:Theme.Holo.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorHint">@color/colorSearchHint</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:paddingStart">0dip</item>
+        <item name="android:paddingEnd">0dip</item>
+    </style>
+</resources>

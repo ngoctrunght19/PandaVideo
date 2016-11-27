@@ -1,42 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:clickable="true"
+    android:background="@android:color/white">
 
     <ImageView
-        android:layout_width="60dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_favorite_border_black_24px"/>
+        android:adjustViewBounds="true"
+        android:src="@drawable/penguins"
+        android:id="@+id/videoImg" />
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="3">
+            android:paddingLeft="10dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <LinearLayout
+                    android:id="@+id/title_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.8">
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="tom and jerry"
+                        android:textColor="@color/colorUnselect"/>
+                    <TextView
+                        android:id="@+id/author"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cartoon"
+                        android:textColor="@color/colorUnselect" />
+
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/popupMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dots_vertical"
+                    android:onClick="showPopup"/>
+
+            </LinearLayout>
             <TextView
+                android:id="@+id/info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:text="hello"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

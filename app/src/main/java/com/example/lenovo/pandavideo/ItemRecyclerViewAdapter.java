@@ -13,7 +13,7 @@ import java.util.List;
  * Created by trung on 11/24/2016.
  */
 
-public class ItemRecylerViewAdapter extends RecyclerView.Adapter<ItemRecylerViewAdapter.ViewHolder>{
+public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>{
 
     private List<AdapterData> dataList;
 
@@ -29,7 +29,7 @@ public class ItemRecylerViewAdapter extends RecyclerView.Adapter<ItemRecylerView
 
     }
 
-    public ItemRecylerViewAdapter(List<AdapterData> dataList) {
+    public ItemRecyclerViewAdapter(List<AdapterData> dataList) {
         this.dataList = dataList;
     }
 

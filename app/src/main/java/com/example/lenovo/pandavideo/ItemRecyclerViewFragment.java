@@ -17,19 +17,19 @@ import java.util.List;
  * Created by trung on 11/24/2016.
  */
 
-public class TabAccount extends Fragment {
+public class ItemRecyclerViewFragment extends Fragment {
 
-    private List<AdapterData> movieList = new ArrayList<>();
+    private List<VideoInfo> videoList = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private ItemRecyclerViewAdapter mAdapter;
+    private ItemRecyclerViewHrAdapter mAdapter;
     private boolean created = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_recyclerview, container, false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewAccount);
 
-        mAdapter = new ItemRecyclerViewAdapter(movieList);
+        mAdapter = new ItemRecyclerViewHrAdapter(videoList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -39,24 +39,16 @@ public class TabAccount extends Fragment {
         return view;
     }
 
-
     private void prepareMovieData() {
         created = true;
 
-        AdapterData movie = new AdapterData(R.drawable.ic_backup_black_24px, "Tải lên");
-        movieList.add(movie);
-
-        movie = new AdapterData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
-        movieList.add(movie);
-
-        movie = new AdapterData(R.drawable.ic_file_download_black_24px, "Tải về");
-        movieList.add(movie);
-
-        movie = new AdapterData(R.drawable.ic_notifications_black_24px, "Thông báo");
-        movieList.add(movie);
-
-        movie = new AdapterData(R.drawable.ic_history_black_24px, "Lịch sử");
-        movieList.add(movie);
+        VideoInfo video = new VideoInfo(R.drawable.penguins, "ba con chim canh cut canh cut",
+                                    "internet", "1 nam truoc - 2k luot xem");
+        videoList.add(video);
+    //    videoList.add(video);
+    //    videoList.add(video);
+    //    videoList.add(video);
+        videoList.add(video);
 
         mAdapter.notifyDataSetChanged();
     }

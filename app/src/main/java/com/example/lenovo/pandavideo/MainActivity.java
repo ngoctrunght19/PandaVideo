@@ -8,6 +8,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -70,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        adapter.addFragment(new Tab1());
-        adapter.addFragment(new Tab1());
+        adapter.addFragment(new ItemRecyclerViewFragment());
+        adapter.addFragment(new ItemRecyclerViewFragment());
         adapter.addFragment(new Tab1());
         adapter.addFragment(new TabAccount());
         viewPager.setAdapter(adapter);
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(1).setContentDescription("Test 2");
         tabLayout.getTabAt(2).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(1).setContentDescription("Test 3");
+        tabLayout.getTabAt(2).setContentDescription("Test 3");
         tabLayout.getTabAt(3).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(3).setContentDescription(R.string.my_account);
 
@@ -102,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 tab.getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
                 CharSequence tabTitle = tab.getContentDescription();
                 getSupportActionBar().setTitle(tabTitle);
-                Toast.makeText(getApplicationContext(), tabTitle, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -115,5 +117,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.actions, popup.getMenu());
+
+        MenuPopupHelper menuHelper = new MenuPopupHelper(getApplicationContext(), (MenuBuilder) popup.getMenu(), v);
+        menuHelper.setForceShowIcon(true);
+        popup.show();
     }
 }

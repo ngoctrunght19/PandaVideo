@@ -25,7 +25,7 @@ public class Tab1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tab1, container, false);
+        return inflater.inflate(R.layout.item_layout, container, false);
     }
 
     public CharSequence getContentDescription() {
