@@ -10,7 +10,6 @@
 -->
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:textColorSecondary">@color/colorUnselect</item>
-        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
     </style>
 
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -26,7 +25,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="SearchTheme" parent="SearchTheme.Base">
-        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+
     </style>
 
     <style name="SearchTheme.Base" parent="android:Theme.Holo.Light">
@@ -35,21 +34,20 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="colorAccent">@android:color/white</item>
         <item name="searchViewStyle">@style/MySearchViewStyle</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorAccent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="searchIcon">@null</item>
-        <item name="submitBackground">@color/colorPrimary</item>
-        <item name="queryBackground">@color/colorPrimary</item>
-        <item name="android:maxWidth">1000dp</item>
+        <item name="submitBackground">@color/colorAccent</item>
+        <item name="queryBackground">@color/colorAccent</item>
     </style>
 
-    <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
-        <item name="android:minWidth">0dip</item>
-        <item name="android:paddingLeft">0dip</item>
-        <item name="android:paddingRight">0dip</item>
+    <style name="GenericProgressIndicator" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
     </style>
 
 </resources>

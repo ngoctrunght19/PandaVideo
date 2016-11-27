@@ -1,5 +1,7 @@
 package com.example.lenovo.pandavideo;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -39,9 +41,15 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, NAME);
-        listview = (ListView) findViewById(R.id.lvData);
-        listview.setAdapter(adapter);
+    //    listview = (ListView) findViewById(R.id.lvData);
+        //    listview.setAdapter(adapter);
 
+//        SearchResultFragment searchResultFragment = new SearchResultFragment();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.search_result, searchResultFragment);
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
 
     }
 
@@ -61,10 +69,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
         searchView.setOnQueryTextListener(this);
 
-        searchView.setFocusable(true);
+    //    searchView.setFocusable(true);
 
-        searchView.setIconifiedByDefault(false);
-        searchView.setIconified(false);
+    //    searchView.setIconifiedByDefault(false);
+    //    searchView.setIconified(false);
         return true;
     }
 
