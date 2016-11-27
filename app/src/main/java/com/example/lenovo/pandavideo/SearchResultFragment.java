@@ -26,7 +26,7 @@ public class SearchResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         ProgressBar spinner = new android.widget.ProgressBar(getContext(), null, android.R.attr.progressBarStyle);
 
-        spinner.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        spinner.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
         return inflater.inflate(R.layout.fragment_search_result, container, false);
     }
 }

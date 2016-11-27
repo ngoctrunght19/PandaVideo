@@ -20,6 +20,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;
@@ -41,15 +42,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, NAME);
-    //    listview = (ListView) findViewById(R.id.lvData);
-        //    listview.setAdapter(adapter);
+        listview = (ListView) findViewById(R.id.lvData);
+        listview.setAdapter(adapter);
 
-//        SearchResultFragment searchResultFragment = new SearchResultFragment();
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.search_result, searchResultFragment);
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
 
     }
 
@@ -69,10 +64,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
         searchView.setOnQueryTextListener(this);
 
-    //    searchView.setFocusable(true);
+        searchView.setFocusable(true);
 
-    //    searchView.setIconifiedByDefault(false);
-    //    searchView.setIconified(false);
+        searchView.setIconifiedByDefault(false);
+        searchView.setIconified(false);
         return true;
     }
 
@@ -86,6 +81,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        Toast.makeText(getApplication(), "query: " + query, Toast.LENGTH_SHORT).show();
+        searchView.clearFocus();
+        listview.setVisibility(View.GONE);
         return true;
     }
 
@@ -109,10 +107,5 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void doSearch(String queryStr) {
-        // get a Cursor, prepare the ListAdapter
-        // and set it
     }
 }
