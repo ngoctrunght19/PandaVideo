@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     private ListView listview;
     private SearchResultFragment searchResult;
     // tạo string array Name cho listview
-    String[] NAME = {"Nam","Hoa","Huong","Lan","Minh","Duong"};
+    String[] NAME = {"Tristana","Teemo","Annie","Ryze","Feed","Alista"};
     ArrayAdapter<String> adapter;
 
     public SearchActivity() {
@@ -55,7 +56,12 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, NAME);
         listview = (ListView) findViewById(R.id.old_search_datas);
         listview.setAdapter(adapter);
-
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                search();
+            }
+        });
     }
 
     @Override
@@ -91,13 +97,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        Toast.makeText(getApplication(), "query: " + query, Toast.LENGTH_SHORT).show();
-        searchView.clearFocus();
-        listview.setVisibility(View.GONE);
-        searchResult.show();
-        searchResult.start();
+        
+        searchView.setQuery(query, false);
 
-        h.sendMessageDelayed(new Message(), 1000);
+        search();
 
         return true;
     }
@@ -124,6 +127,16 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void search() {
+        searchView.clearFocus();
+
+        listview.setVisibility(View.GONE);
+        searchResult.show();
+        searchResult.start();
+
+        h.sendMessageDelayed(new Message(), 1000);
     }
 
     public void showPopup(View v) {
