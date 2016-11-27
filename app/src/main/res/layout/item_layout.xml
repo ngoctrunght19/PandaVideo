@@ -40,13 +40,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="tom and jerry"
-                        android:textColor="@color/colorUnselect"/>
+                        android:textColor="@color/colorUnselect"
+                        android:ellipsize="end"
+                        android:maxLines="2"/>
                     <TextView
                         android:id="@+id/author"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="cartoon"
-                        android:textColor="@color/colorUnselect" />
+                        android:textColor="@color/colorUnselect"
+                        android:ellipsize="end"
+                        android:maxLines="2" />
 
                 </LinearLayout>
                 <ImageView
@@ -63,7 +67,9 @@
                 android:id="@+id/info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="hello"/>
+                android:text="hello"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
         </LinearLayout>
 
