@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        adapter.addFragment(new ItemRecyclerViewFragment());
+        adapter.addFragment(new TabHome());
         adapter.addFragment(new ItemRecyclerViewFragment());
         adapter.addFragment(new Tab1());
         adapter.addFragment(new TabAccount());
@@ -93,13 +93,10 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(0).setContentDescription("Panda Video");
         tabLayout.getTabAt(1).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(1).setContentDescription("Test 2");
         tabLayout.getTabAt(1).setContentDescription("Chủ đề");
         tabLayout.getTabAt(2).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(2).setContentDescription("Test 3");
         tabLayout.getTabAt(2).setContentDescription("Đăng ký");
         tabLayout.getTabAt(3).getIcon().setColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(3).setContentDescription(R.string.my_account);
         tabLayout.getTabAt(3).setContentDescription("Tài khoản");
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
