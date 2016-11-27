@@ -19,9 +19,9 @@ import java.util.List;
 
 public class TabAccount extends Fragment {
 
-    private List<AdapterData> movieList = new ArrayList<>();
+    private List<AccountData> movieList = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private ItemRecylerViewAdapter mAdapter;
+    private AccountRecylerViewAdapter mAdapter;
     private boolean created = false;
 
     @Override
@@ -29,7 +29,7 @@ public class TabAccount extends Fragment {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewAccount);
 
-        mAdapter = new ItemRecylerViewAdapter(movieList);
+        mAdapter = new AccountRecylerViewAdapter(movieList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -39,26 +39,22 @@ public class TabAccount extends Fragment {
         return view;
     }
 
-    public CharSequence getContentDescription() {
-        return "tai khoan cua toi";
-    }
-
     private void prepareMovieData() {
         created = true;
 
-        AdapterData movie = new AdapterData(R.drawable.ic_backup_black_24px, "Tải lên");
+        AccountData movie = new AccountData(R.drawable.ic_backup_black_24px, "Tải lên");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
+        movie = new AccountData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_file_download_black_24px, "Tải về");
+        movie = new AccountData(R.drawable.ic_file_download_black_24px, "Tải về");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_notifications_black_24px, "Thông báo");
+        movie = new AccountData(R.drawable.ic_notifications_black_24px, "Thông báo");
         movieList.add(movie);
 
-        movie = new AdapterData(R.drawable.ic_history_black_24px, "Lịch sử");
+        movie = new AccountData(R.drawable.ic_history_black_24px, "Lịch sử");
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();

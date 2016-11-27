@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        adapter.addFragment(new Tab1());
+        adapter.addFragment(new TabHome());
         adapter.addFragment(new Tab1());
         adapter.addFragment(new Tab1());
         adapter.addFragment(new TabAccount());
@@ -100,9 +100,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 tab.getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
-                CharSequence tabTitle = tab.getContentDescription();
-                getSupportActionBar().setTitle(tabTitle);
-                Toast.makeText(getApplicationContext(), tabTitle, Toast.LENGTH_SHORT).show();
             }
 
             @Override
