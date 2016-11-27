@@ -1,5 +1,6 @@
 package com.example.lenovo.pandavideo;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,10 @@ public class TabHome extends Fragment {
     protected Handler handler;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //doi mau process bar luc bat dau vao app
+        ProgressBar spinner = new android.widget.ProgressBar(getContext(), null, android.R.attr.progressBarStyle);
+        spinner.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+
         View view = inflater.inflate(R.layout.fragment_card_view_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewHome);
         handler = new Handler();

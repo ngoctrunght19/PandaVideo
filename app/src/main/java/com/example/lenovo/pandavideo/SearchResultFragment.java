@@ -35,9 +35,7 @@ public class SearchResultFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ProgressBar spinner = new android.widget.ProgressBar(getContext(), null, android.R.attr.progressBarStyle);
 
-        spinner.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.search_result_recycler);
