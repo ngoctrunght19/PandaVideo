@@ -2,9 +2,11 @@ package com.example.lenovo.pandavideo;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
@@ -15,6 +17,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private FloatingActionButton searchFlab;
     private HomeFragment mTabHome;
+    private Spinner mSpinner;
 
     // chỗ này thay dổi icon cho từng tab
     // hiên tại để cả bốn tab giống nhau
@@ -45,8 +53,23 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         setSupportActionBar(toolbar);
-
         setupViewPager(viewPager);
+
+        final ActionBar actionBar = getSupportActionBar();
+
+        mSpinner = (Spinner) findViewById(R.id.spinner_playlist);
+        mSpinner.setVisibility(View.INVISIBLE);
+
+        String[] items = getResources().getStringArray(R.array.playlist);
+        List<String> spinnerItems = new ArrayList<String>();
+
+        for(int i = 0; i < items.length; i++)
+        {
+            spinnerItems.add(items[i]);
+        }
+
+        SpinnerAdapter adapter = new SpinnerAdapter(actionBar.getThemedContext(), spinnerItems);
+        mSpinner.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
@@ -61,18 +84,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//
-//        // Checks the orientation of the screen
-//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-//            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -116,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
                 tab.getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
                 CharSequence tabTitle = tab.getContentDescription();
                 getSupportActionBar().setTitle(tabTitle);
+                if (tab.getPosition() == 1) {
+                    mSpinner.setVisibility(View.GONE);
+                } else {
+                    mSpinner.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
