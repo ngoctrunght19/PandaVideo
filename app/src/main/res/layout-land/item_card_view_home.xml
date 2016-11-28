@@ -38,6 +38,7 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:text="Làm người yêu anh nhé baby"
+                android:onClick="watchVideo"
                 android:textColor="@color/textColorPrimary" />
 
             <TextView

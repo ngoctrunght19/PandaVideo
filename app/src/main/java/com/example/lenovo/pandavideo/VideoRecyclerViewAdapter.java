@@ -35,7 +35,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
         VideoData video = mVideoList.get(position);
         holder.mTitle.setText(video.getTitle());
         holder.mImageView.setImageResource(video.getImage());
-        holder.mAuthor.setText(video.getAuthor());
+        holder.mAuthor.setText("By " + video.getAuthor());
         holder.mInfo.setText(video.getInfo());
     }
 
