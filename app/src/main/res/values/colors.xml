@@ -15,4 +15,7 @@
     <color name="colorUnselect">#555555</color>
     <color name="colorSearchHint">#ddffffff</color>
     <!--<color name="colorAccent">#c8e8ff</color>-->
+
+    <color name="textTimeColor">#FFFFFFFF</color>
+    <color name="textTimeBackground">#AA000000</color>
 </resources>

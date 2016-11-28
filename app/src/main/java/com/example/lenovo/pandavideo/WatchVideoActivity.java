@@ -165,5 +165,6 @@ public class WatchVideoActivity extends AppCompatActivity {
         // Lấy lại ví trí video đã chơi.
         position = savedInstanceState.getInt("CurrentPosition");
         videoView.seekTo(position);
+        videoView.start();
     }
 }

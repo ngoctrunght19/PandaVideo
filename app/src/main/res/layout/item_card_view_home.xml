@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <FrameLayout
-                android:id="@+id/imageVideoLayout"
+                android:id="@+id/imageVideoFrame"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content">
                 <ImageView
@@ -36,8 +36,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_gravity="bottom|right"
-                    android:textColor="#FFFFFFFF"
-                    android:background="#99000000"
+                    android:textColor="@color/textTimeColor"
+                    android:background="@color/textTimeBackground"
 
                     android:text="2:10"/>
             </FrameLayout>
@@ -52,7 +52,7 @@
                 android:text="Làm người yêu anh nhé baby"
                 android:textColor="@color/textColorPrimary"
                 android:onClick="watchVideo"
-                android:layout_below="@+id/imageVideoLayout" />
+                android:layout_below="@+id/imageVideoFrame" />
 
             <TextView
                 android:id="@+id/textChannel"
