@@ -9,7 +9,7 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
+        android:layout_height="255dp"
         android:layout_margin="5dp"
         card_view:cardCornerRadius="2dp"
         card_view:contentPadding="10dp">
@@ -38,7 +38,6 @@
                     android:layout_gravity="bottom|right"
                     android:textColor="@color/textTimeColor"
                     android:background="@color/textTimeBackground"
-
                     android:text="2:10"/>
             </FrameLayout>
 
@@ -48,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:textSize="17sp"
+                android:maxLines="1"
                 android:ellipsize="end"
                 android:text="Làm người yêu anh nhé baby"
                 android:textColor="@color/textColorPrimary"
@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:textSize="13sp"
+                android:maxLines="1"
                 android:ellipsize="end"
                 android:text="By Nguyen Jeny"
                 android:layout_below="@+id/textTitle"/>
