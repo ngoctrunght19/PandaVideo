@@ -42,19 +42,14 @@ public class SubscribeFragment extends Fragment {
     private void prepareMovieData() {
         created = true;
 
-        SubscribeData movie = new SubscribeData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
+        SubscribeData movie = new SubscribeData(0, "LoL Replay");
         movieList.add(movie);
-
-        movie = new SubscribeData(R.drawable.avatar, "Tải lên");
         movieList.add(movie);
-
-        movie = new SubscribeData(R.drawable.avatar, "Tải về");
         movieList.add(movie);
-
-        movie = new SubscribeData(R.drawable.avatar, "Thông báo");
         movieList.add(movie);
-
-        movie = new SubscribeData(R.drawable.avatar, "Lịch sử");
+        movieList.add(movie);
+        movieList.add(movie);
+        movieList.add(movie);
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();

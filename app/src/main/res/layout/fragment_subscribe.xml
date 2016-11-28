@@ -8,10 +8,18 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchSubscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.SearchView>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecyclerViewSubscribe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/searchSubscribe"
         android:scrollbars="vertical" />
 
 </RelativeLayout>
