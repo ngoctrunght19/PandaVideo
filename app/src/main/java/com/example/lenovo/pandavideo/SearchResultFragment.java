@@ -74,14 +74,8 @@ public class SearchResultFragment extends Fragment {
 
     private void prepareMovieData() {
         created = true;
-
-        VideoInfo video = new VideoInfo(R.drawable.penguins, "ba con chim canh cut canh cut",
-                "internet", "1 nam truoc - 2k luot xem");
-        videoList.add(video);
-        videoList.add(video);
-        videoList.add(video);
-        videoList.add(video);
-        videoList.add(video);
+        CreateDataForDemo stub = new CreateDataForDemo();
+        videoList = stub.getVideoList();
 
         mAdapter.notifyDataSetChanged();
     }

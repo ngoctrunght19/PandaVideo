@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="video_image_array">
+        <item>@drawable/teemo_broken</item>
+        <item>@drawable/teemo_vs_renekton</item>
+        <item>@drawable/tristana_dragontrain</item>
+        <item>@drawable/tdt_tristana</item>
+        <item>@drawable/teemo_vs_vladimir</item>
+        <item>@drawable/yasu</item>
+        <item>@drawable/dc_vs_wings</item>
+    </array>
+
+    <string-array name="video_title_array">
+        <item>Teemo broken - AHHHHH</item>
+        <item>Teemo vs Renekton </item>
+        <item>Trang phục Tristana luyện rồng</item>
+        <item>Tiêu điểm tướng Tristana - Tay súng thiện xạ</item>
+        <item>Teemo vs Vladimir AP mid</item>
+        <item>Minh - Best Yasuo</item>
+        <item>DC vs Wings - What A Game! - The Summit 6 Dota 2</item>
+    </string-array>
+
+    <string-array name="video_author_array">
+        <item>Lol - Troll</item>
+        <item>Troll - Lol</item>
+        <item>Lol - Troll</item>
+        <item>Lol - Troll</item>
+        <item>Nhận cày thuê liên minh</item>
+        <item>Nhận cày thuê liên minh</item>
+        <item>NoobFromUA</item>
+    </string-array>
+</resources>
