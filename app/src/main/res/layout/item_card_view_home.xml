@@ -18,14 +18,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageVideo"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="fitXY"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/lamnguoiyeuanhnhebaby"
-                android:onClick="watchVideo"/>
+            <FrameLayout
+                android:id="@+id/imageVideoLayout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+                <ImageView
+                    android:id="@+id/imageVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="fitXY"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/lamnguoiyeuanhnhebaby"
+                    android:onClick="watchVideo"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_gravity="bottom|right"
+                    android:textColor="#FFFFFFFF"
+                    android:background="#99000000"
+
+                    android:text="2:10"/>
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/textTitle"
@@ -37,7 +52,7 @@
                 android:text="Làm người yêu anh nhé baby"
                 android:textColor="@color/textColorPrimary"
                 android:onClick="watchVideo"
-                android:layout_below="@+id/imageVideo" />
+                android:layout_below="@+id/imageVideoLayout" />
 
             <TextView
                 android:id="@+id/textChannel"
