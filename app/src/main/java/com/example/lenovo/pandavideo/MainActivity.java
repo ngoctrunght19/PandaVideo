@@ -1,6 +1,7 @@
 package com.example.lenovo.pandavideo;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.design.widget.FloatingActionButton;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FloatingActionButton searchFlab;
+    private TabHome mTabHome;
 
     // chỗ này thay dổi icon cho từng tab
     // hiên tại để cả bốn tab giống nhau
@@ -63,6 +65,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//
+//        // Checks the orientation of the screen
+//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+//            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -73,9 +87,10 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        adapter.addFragment(new TabHome());
-        adapter.addFragment(new ItemRecyclerViewFragment());
-        adapter.addFragment(new ItemRecyclerViewFragment());
+        mTabHome = new TabHome();
+        adapter.addFragment(mTabHome);
+        adapter.addFragment(new VideoFragment());
+        adapter.addFragment(new VideoFragment());
         adapter.addFragment(new TabAccount());
         viewPager.setAdapter(adapter);
     }
@@ -127,5 +142,10 @@ public class MainActivity extends AppCompatActivity {
         MenuPopupHelper menuHelper = new MenuPopupHelper(v.getContext(), (MenuBuilder) popup.getMenu(), v);
         menuHelper.setForceShowIcon(true);
         popup.show();
+    }
+
+    public void watchVideo(View view) {
+        Intent watchVideo = new Intent(MainActivity.this, WatchVideoActivity.class);
+        startActivity(watchVideo);
     }
 }

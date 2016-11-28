@@ -36,12 +36,13 @@ public class TabHome extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tab_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewHome);
         handler = new Handler();
-        if (created != true)prepareMovieData();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new HomeRecyclerViewAdapter(listData, mRecyclerView);
+    //    mAdapter.notifyDataSetChanged();
         mRecyclerView.setAdapter(mAdapter);
+        if (created != true)prepareMovieData();
 
         mAdapter.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
@@ -68,7 +69,7 @@ public class TabHome extends Fragment {
                         mAdapter.setLoaded();
                         //or you can add all at once but do not forget to call mAdapter.notifyDataSetChanged();
                     }
-                }, 5000);
+                }, 2000);
             }
         });
         return view;

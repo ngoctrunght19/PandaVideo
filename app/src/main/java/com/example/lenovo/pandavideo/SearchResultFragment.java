@@ -1,7 +1,6 @@
 package com.example.lenovo.pandavideo;
 
 
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -18,9 +17,9 @@ import java.util.List;
 
 public class SearchResultFragment extends Fragment {
 
-    private List<VideoInfo> videoList = new ArrayList<>();
+    private List<VideoData> videoList = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private ItemRecyclerViewHrAdapter mAdapter;
+    private VideoRecyclerViewAdapter mAdapter;
     private boolean created = false;
 
     ProgressBar mProgressBar;
@@ -39,7 +38,7 @@ public class SearchResultFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.search_result_recycler);
-        mAdapter = new ItemRecyclerViewHrAdapter(videoList);
+        mAdapter = new VideoRecyclerViewAdapter(videoList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -75,7 +74,7 @@ public class SearchResultFragment extends Fragment {
     private void prepareMovieData() {
         created = true;
 
-        VideoInfo video = new VideoInfo(R.drawable.penguins, "ba con chim canh cut canh cut",
+        VideoData video = new VideoData(R.drawable.penguins, "ba con chim canh cut canh cut",
                 "internet", "1 nam truoc - 2k luot xem");
         videoList.add(video);
         videoList.add(video);

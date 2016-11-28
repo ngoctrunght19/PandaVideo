@@ -2,8 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/p_like"
+        android:id="@+id/addtofavorite"
         android:icon="@drawable/ic_favorite_border_black_24px"
-        android:title="@string/like" />
+        android:title="@string/addtofavorite" />
+    <item
+        android:id="@+id/download"
+        android:icon="@drawable/ic_favorite_border_black_24px"
+        android:title="@string/download" />
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_favorite_border_black_24px"
+        android:title="@string/share" />
     <!-- menu group -->
 </menu>

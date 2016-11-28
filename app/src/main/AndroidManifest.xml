@@ -19,8 +19,7 @@
                 android:name="android.app.search_default"
                 android:value=".SearchActivity" />
         </activity>
-        <activity android:name=".SearchActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
 
@@ -31,6 +30,13 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+        <activity android:name=".WatchVideoActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
     </application>
 
 </manifest>
