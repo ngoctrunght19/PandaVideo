@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
         adapter.addFragment(new HomeFragment());
         adapter.addFragment(new VideoFragment());
-        adapter.addFragment(new VideoFragment());
+        adapter.addFragment(new SubscribeFragment());
         adapter.addFragment(new AccountFragment());
         viewPager.setAdapter(adapter);
     }

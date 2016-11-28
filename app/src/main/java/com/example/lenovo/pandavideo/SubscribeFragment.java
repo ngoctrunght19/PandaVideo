@@ -12,24 +12,23 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * Created by trung on 11/24/2016.
+ * Created by trung on 11/28/2016.
  */
 
-public class AccountFragment extends Fragment {
+public class SubscribeFragment extends Fragment {
 
-    private List<AccountData> movieList = new ArrayList<>();
+    private List<SubscribeData> movieList = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private AccountRecyclerViewAdapter mAdapter;
+    private SubscribeRecyclerViewAdapter mAdapter;
     private boolean created = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab_account, container, false);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewAccount);
+        View view = inflater.inflate(R.layout.fragment_subscribe, container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerViewSubscribe);
 
-        mAdapter = new AccountRecyclerViewAdapter(movieList);
+        mAdapter = new SubscribeRecyclerViewAdapter(movieList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -43,19 +42,19 @@ public class AccountFragment extends Fragment {
     private void prepareMovieData() {
         created = true;
 
-        AccountData movie = new AccountData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
+        SubscribeData movie = new SubscribeData(R.drawable.ic_favorite_border_black_24px, "Yêu thích");
         movieList.add(movie);
 
-        movie = new AccountData(R.drawable.ic_backup_black_24px, "Tải lên");
+        movie = new SubscribeData(R.drawable.avatar, "Tải lên");
         movieList.add(movie);
 
-        movie = new AccountData(R.drawable.ic_file_download_black_24px, "Tải về");
+        movie = new SubscribeData(R.drawable.avatar, "Tải về");
         movieList.add(movie);
 
-        movie = new AccountData(R.drawable.ic_notifications_black_24px, "Thông báo");
+        movie = new SubscribeData(R.drawable.avatar, "Thông báo");
         movieList.add(movie);
 
-        movie = new AccountData(R.drawable.ic_history_black_24px, "Lịch sử");
+        movie = new SubscribeData(R.drawable.avatar, "Lịch sử");
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();

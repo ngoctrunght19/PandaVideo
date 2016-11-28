@@ -7,47 +7,47 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lenovo.pandavideo.SourceCode.CircleImage;
+
 import java.util.List;
 
 /**
- * Created by trung on 11/24/2016.
+ * Created by trung on 11/28/2016.
  */
 
-public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>{
+public class SubscribeRecyclerViewAdapter extends RecyclerView.Adapter<SubscribeRecyclerViewAdapter.ViewHolder>{
 
-    private List<AccountData> dataList;
+    private List<SubscribeData> dataList;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView mImageView;
+        public CircleImage mImageView;
         public TextView mTitle;
 
         public ViewHolder(View view) {
             super(view);
-            mImageView = (ImageView) view.findViewById(R.id.iconAccount);
-            mTitle = (TextView) view.findViewById(R.id.mAccountItem);
+            mImageView = (CircleImage) view.findViewById(R.id.avatarSubscribe);
+            mTitle = (TextView) view.findViewById(R.id.nameSubscribe);
         }
 
     }
 
-    public ItemRecyclerViewAdapter(List<AccountData> dataList) {
+    public SubscribeRecyclerViewAdapter(List<SubscribeData> dataList) {
         this.dataList = dataList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.account_item, parent, false);
-        /*View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.account_item, parent, false);*/
+        View itemView = inflater.inflate(R.layout.item_subscribe, parent, false);
 
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        AccountData movie = dataList.get(position);
-        holder.mTitle.setText(movie.getTitle());
-        holder.mImageView.setImageResource(movie.getImageView());
+        SubscribeData movie = dataList.get(position);
+        holder.mTitle.setText(movie.getName());
+        //holder.mImageView.setImageResource(movie.getAvatar());
     }
 
     @Override
