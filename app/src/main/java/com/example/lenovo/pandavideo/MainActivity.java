@@ -127,10 +127,10 @@ public class MainActivity extends AppCompatActivity {
                 tab.getIcon().setColorFilter(colorAccent, PorterDuff.Mode.SRC_IN);
                 CharSequence tabTitle = tab.getContentDescription();
                 getSupportActionBar().setTitle(tabTitle);
-                if (tab.getPosition() == 1) {
-                    mSpinner.setVisibility(View.GONE);
+                if (tab.getPosition() == 1) {   // tab chủ đề
+                    mSpinner.setVisibility(View.VISIBLE);
                 } else {
-                    mSpinner.setVisibility(View.INVISIBLE);
+                    mSpinner.setVisibility(View.GONE);
                 }
             }
 
