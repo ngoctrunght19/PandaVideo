@@ -19,7 +19,6 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20px"
                 android:paddingTop="15px"
                 android:background="#FFFFFF">
                 //video
@@ -33,13 +32,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Đây là tên của video"
+                    android:text="Làm người yêu anh nhé baby - 3 chú bộ đội"
                     android:id="@+id/textView"
+                    android:textSize="20sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/textColorPrimary"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:text="1500000 luot xem"
+                    android:text="1.500.000 lượt xem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/luotxem"
@@ -54,37 +57,50 @@
                     android:layout_below="@+id/textView">
 
                     <ImageView
-                        android:layout_height="35dp"
-                        android:src="@drawable/like"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_thumb_up_black_24px"
+                        android:tint="@color/colorUnselect"
                         android:id="@+id/like"
+                        android:layout_marginRight="7dp"
                         android:layout_below="@+id/textView"
-                        android:layout_width="35dp"/>
+                        />
 
                     <TextView
                         android:id="@+id/tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15k"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/space"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"/>
+                        android:text="230.500"
+                        android:textSize="16sp" />
 
                     <ImageView
-                        android:layout_height="35dp"
-                        android:src="@drawable/dislike"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="7dp"
+                        android:src="@drawable/ic_thumb_down_black_24px"
                         android:id="@+id/dislike"
-                        android:layout_below="@+id/textView"
-                        android:layout_width="35dp"/>
+                        android:layout_below="@+id/textView" />
 
                     <TextView
                         android:id="@+id/tv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9k"
-                        android:textSize="24sp" />
+                        android:text="500"
+                        android:textSize="16sp" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="70dp"
+                        android:src="@drawable/ic_share_black_24px"
+                        android:layout_below="@+id/textView" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_file_download_black_24px"
+                        android:layout_below="@+id/textView" />
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -149,7 +165,7 @@
                                 android:textStyle="italic"
                                 android:layout_below="@+id/textView1"/>
                             <TextView
-                                android:text="1500000 luot xem"
+                                android:text="500.000 lượt xem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView3"
@@ -206,7 +222,7 @@
 
 
                             <TextView
-                                android:text="1500000 luot xem"
+                                android:text="500.000 lượt xem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView7"
@@ -260,7 +276,7 @@
                                 android:textStyle="italic"
                                 android:layout_below="@+id/textView9"/>
                             <TextView
-                                android:text="1500000 luot xem"
+                                android:text="500.000 lượt xem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView11"
@@ -316,7 +332,7 @@
 
 
                             <TextView
-                                android:text="1500000 luot xem"
+                                android:text="500.000 lượt xem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView15"
@@ -374,7 +390,7 @@
 
 
                             <TextView
-                                android:text="1500000 luot xem"
+                                android:text="500.000 lượt xem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/textView19"
