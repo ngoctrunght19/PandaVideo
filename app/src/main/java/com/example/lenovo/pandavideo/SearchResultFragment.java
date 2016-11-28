@@ -74,12 +74,24 @@ public class SearchResultFragment extends Fragment {
     private void prepareMovieData() {
         created = true;
 
-        VideoData video = new VideoData(R.drawable.penguins, "ba con chim canh cut canh cut",
-                "internet", "1 nam truoc - 2k luot xem");
+        VideoData video = new VideoData(R.drawable.tristana_dragontrain, "Dragon Trainer Tristana | Login Screen - League of Legends",
+                "League of Legends", "1 năm trước - 2k3 lượt xem");
         videoList.add(video);
+
+        video = new VideoData(R.drawable.tdt_tristana, "Champion Spotlight: Tristana, the Yordle Gunner.",
+                "League of Legends", "2 năm trước - 2k3 lượt xem");
         videoList.add(video);
+
+        video = new VideoData(R.drawable.teemo_broken, "Dyrus • TEEMO BROKEN AHHHH!!",
+                "Dyrus", "2 năm trước - 2k3 lượt xem");
         videoList.add(video);
+
+        video = new VideoData(R.drawable.teemo_vs_renekton, "Best Teemo Korea vs Renekton TOP Ranked Challenger",
+                "Lol Korean Pro Replays", "2 năm trước - 2k3 lượt xem");
         videoList.add(video);
+
+        video = new VideoData(R.drawable.teemo_vs_vladimir, "League of Legends - Super Teemo vs Vladimir - S6 Ranked Gameplay (Season 6)",
+                "Beastly Teemo", "2 năm trước - 2k3 lượt xem");
         videoList.add(video);
 
         mAdapter.notifyDataSetChanged();
