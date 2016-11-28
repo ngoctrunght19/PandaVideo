@@ -54,8 +54,8 @@ public class WatchVideoActivity extends AppCompatActivity {
 
         try {
             // ID của file video.
-            int id = getId(curPos);
-            videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + id));
+            //int id = getId(curPos);
+            videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.lamnguoiyeuanhnhe));
 
 
         } catch (Exception e) {
