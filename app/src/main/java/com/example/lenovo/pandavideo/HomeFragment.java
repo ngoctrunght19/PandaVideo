@@ -19,7 +19,7 @@ import java.util.List;
  * Created by trung on 11/26/2016.
  */
 
-public class TabHome extends Fragment {
+public class HomeFragment extends Fragment {
 
     private List<HomeData> listData = new ArrayList<HomeData>();
     private RecyclerView mRecyclerView;
@@ -90,7 +90,7 @@ public class TabHome extends Fragment {
         data = new HomeData(R.drawable.lck, "LCK Spring - Week 10 Day 1", "LoL Esports");
         listData.add(data);
 
-        data = new HomeData(R.drawable.sktvsrox, "SK Telecom T1 vs Rox Tigers | Game 1 ...", "LoL Esports");
+        data = new HomeData(R.drawable.sktvsrox, "SK Telecom T1 vs Rox Tigers | Game 1", "LoL Esports");
         listData.add(data);
 
         data = new HomeData(R.drawable.yasu, "Yasuo Montage - Community Montage 2016", "LoL Esports");

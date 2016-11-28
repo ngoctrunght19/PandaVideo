@@ -17,7 +17,7 @@ import java.util.List;
  * Created by trung on 11/24/2016.
  */
 
-public class TabAccount extends Fragment {
+public class AccountFragment extends Fragment {
 
     private List<AccountData> movieList = new ArrayList<>();
     private RecyclerView mRecyclerView;

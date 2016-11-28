@@ -1,8 +1,6 @@
 package com.example.lenovo.pandavideo;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -17,7 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FloatingActionButton searchFlab;
-    private TabHome mTabHome;
+    private HomeFragment mTabHome;
 
     // chỗ này thay dổi icon cho từng tab
     // hiên tại để cả bốn tab giống nhau
@@ -87,11 +84,10 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapterWithoutTitle adapter = new ViewPagerAdapterWithoutTitle(getSupportFragmentManager());
-        mTabHome = new TabHome();
-        adapter.addFragment(mTabHome);
+        adapter.addFragment(new HomeFragment());
         adapter.addFragment(new VideoFragment());
         adapter.addFragment(new VideoFragment());
-        adapter.addFragment(new TabAccount());
+        adapter.addFragment(new AccountFragment());
         viewPager.setAdapter(adapter);
     }
 

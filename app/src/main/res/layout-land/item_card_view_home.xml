@@ -25,7 +25,8 @@
                 android:scaleType="fitXY"
                 android:layout_marginRight="20dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/lamnguoiyeuanhnhebaby"/>
+                android:src="@drawable/lamnguoiyeuanhnhebaby"
+                android:onClick="watchVideo"/>
 
             <TextView
                 android:id="@+id/textTitle"
